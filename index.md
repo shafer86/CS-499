@@ -15,8 +15,26 @@
 
 
 
-
+<details><summary>Code Review Part 1</summary>
+  
 https://user-images.githubusercontent.com/79005760/145661407-538c1911-97cd-4b28-8bf7-506232c5774c.mp4
+  
+  </p>
+  </details>
+
+<details><summary>Code Review Part 2</summary>
+  
+https://user-images.githubusercontent.com/79005760/145661662-46acb9cd-ca61-435d-b520-92f1b4991403.mp4
+  
+  </p>
+  </details>
+
+<details><summary>Code Review Part 3</summary>
+  
+https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-94ce-0c8cd53ac4b1.mp4
+    
+  </p>
+  </details>
 
 
 
