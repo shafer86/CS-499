@@ -37,22 +37,30 @@ https://user-images.githubusercontent.com/79005760/145661407-538c1911-97cd-4b28-
   </p>
   </details>
 
-<details><summary>Code Review Part 2</summary>
+<details><summary>Code Review Part Intro 2</summary>
   
 https://user-images.githubusercontent.com/79005760/145661662-46acb9cd-ca61-435d-b520-92f1b4991403.mp4
   
   </p>
   </details>
 
-<details><summary>Code Review Part 3</summary>
+<details><summary>Code Review Intro Part 3</summary>
   
 https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-94ce-0c8cd53ac4b1.mp4
     
   </p>
   </details>
 
-
-https://youtu.be/T95YuSByxrQ
+<details><summary>Code Review Part 1</summary>
+  
+  Due to the size of the file I have included a link to the code review that has been posted on YouTube.
+  
+  https://youtu.be/T95YuSByxrQ
+  
+  </p>
+  </details>
+  
+  https://youtu.be/Od6pVbPDmZE
 
 
 
