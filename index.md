@@ -59,12 +59,27 @@ https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-
   
   </p>
   </details>
+ 
+ <details><summary>Code Review Part 2</summary>
   
   https://youtu.be/Od6pVbPDmZE
   
+  </p>
+  </details>
+  
+ <details><summary>Code Review Part 3</summary>
+  
   https://youtu.be/vdP5zSQjusk
   
+  </p>
+  </details>
+  
+ <details><summary>Code Review Part 4</summary>
+  
   https://youtu.be/Ri8VtZzhABg
+  
+  </p>
+  </details>
 
 
 
@@ -74,16 +89,11 @@ https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-
  
  
 # Artifact Enhancment Software Design
-
-<details><summary>Code Before Enhancment</summary>
-  insert code here
-   </p>
-  </details>
   
  
-<details><summary>Code After Enhancement</summary>
+<details><summary>Code Before Enhancement</summary>
   
-  ```
+  ```ruby
   #include <iostream>
 #include <vector>
 #include <fstream>
@@ -281,7 +291,5 @@ int main()
 ```
   </p>
   </details>
-  
-  
-  
+
   
