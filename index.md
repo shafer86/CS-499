@@ -3,7 +3,7 @@
 | INDEX |
 | ----- |
 | [Introduction](#introduction) |
-| Code Review|
+| [Code Review](#code-review)|
 | Artifact Enhancment Software Design |
 | Software Design Narrative |
 | Artifact Enhancment Algorithm and Data Structure |
@@ -14,8 +14,23 @@
 
 
 
+ ## Introduction
+ Hello! My name is Chad Shafer and this is my ePortfolio for Southern New Hampshire University class CS-499.
+ This ePorfolio will demonstrate the knowledge and skills that I have developed throughout my journey to complete my B.A. in
+ Software Engineering. To do so, I will showcase artifacts that demonstrate my skills and abilities in three key categories:
+- Software Design
+- Algorithms and Data Structure
+- Databases
 
-<details><summary>Code Review Part 1</summary>
+To acomplish this demonstration I have taken prievious artifacts including open-source code and enhanced it according to the three 
+categories above. Before I show the enhancements, I have created a code review that will discuss the functionality of the code as 
+well as discuss the planned enhancements. Following the enhancements will be a narrative describing in detail the changes
+and justifaction of the artifacts inclusion in this ePortfolio. 
+
+
+# Code Review
+
+<details><summary>Code Review Intro Part 1</summary>
   
 https://user-images.githubusercontent.com/79005760/145661407-538c1911-97cd-4b28-8bf7-506232c5774c.mp4
   
@@ -37,14 +52,13 @@ https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-
   </details>
 
 
-
+https://youtu.be/T95YuSByxrQ
 
 
 
   
   
- ### Introduction
- this is my introduction
+
  
  
  ## Artifact Enhancment Software Design
