@@ -73,9 +73,15 @@ https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-
 
  
  
- ## Artifact Enhancment Software Design
+# Artifact Enhancment Software Design
+
+<details><summary>Code Before Enhancment</summary>
+  insert code here
+   </p>
+  </details>
+  
  
- <details><summary>Code</summary>
+<details><summary>Code After Enhancement</summary>
   
   ```
   #include <iostream>
