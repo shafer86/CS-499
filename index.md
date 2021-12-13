@@ -1,18 +1,19 @@
-                                                      Welcome to My Page
+                                                      Welcome to My Page 
 
 | INDEX |
 | ----- |
 | [Introduction](#introduction) |
 | [Code Review](#code-review)|
-| Artifact Enhancment Software Design |
 | Software Design Narrative |
-| Artifact Enhancment Algorithm and Data Structure |
+| Artifact Enhancment Software Design |
+| Artifact Enhancment Algorithm and Data Structure |           
 | Algorithm and Data Structure Narrative |
 | Artifact Enhancment Database |
 | Database Narative |
 | Self Assesment |
 
 
+![me](https://user-images.githubusercontent.com/79005760/145807383-11fbf96f-f710-4692-8d84-892d50f9ae58.jpg)
 
  ## Introduction
  Hello! My name is Chad Shafer and this is my ePortfolio for Southern New Hampshire University class CS-499.
@@ -83,7 +84,9 @@ https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-
 
 
 
-  
+# Software Design Narrative
+
+
   
 
  
