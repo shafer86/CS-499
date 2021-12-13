@@ -2,7 +2,7 @@
 
 | INDEX |
 | ----- |
-| [Introduction](#introduction) |
+| [Introduction](#introduction-and-self-assessment) |
 | [Code Review](#code-review)|
 | [Software Design Narrative](#software-design-narrative) |
 | Artifact Enhancment Software Design |
