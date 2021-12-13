@@ -15,7 +15,7 @@
 
 ![me](https://user-images.githubusercontent.com/79005760/145807383-11fbf96f-f710-4692-8d84-892d50f9ae58.jpg)
 
- ## Introduction
+ ## Introduction and Self Assessment
  Hello! My name is Chad Shafer and this is my ePortfolio for Southern New Hampshire University class CS-499.
  This ePorfolio will demonstrate the knowledge and skills that I have developed throughout my journey to complete my B.A. in
  Software Engineering. To do so, I will showcase artifacts that demonstrate my skills and abilities in three key categories:
@@ -611,6 +611,16 @@ Enhancing this randomizer was a lot of fun. I played around with different equat
 
 # Artifact Enhancment Algorithm and Data Structure
   
+  The code below is the same program as the Software Design enhancment. The major changes are:
+  
+ ```ruby
+  int main()
+{
+    srand(time(0));
+  }
+  ```
+    
+  
  <details><summary>Hangman Code After Enhancment</summary> 
   
   ```ruby
@@ -905,4 +915,19 @@ int main()
 ```
    </p>
   </details>
+   
+   
+# Database Narative
+   
+   You can find the file [here]()
+   
+   The article that I have chosen to use is a simple program meant to demonstrate a database in C++. This article is a simple program that allows a user to preform basic CRUD operations for a personnel management system. As of right now the only information to be stored is a name, age, and salary. The program starts off with our includes and declaring our using namespace std. Next, II declared my functions so the compiler could understand the function name, arguments, and return type. I then go right into the main function. The first three lines I build the aesthetics of the command box with title and color. The next part in my main is the option menu followed by a switch statement based on the option menu. For each switch case, I have a function that will be called upon. The database system is old school, in the sense that it is through a text file, using ofstream, with input/output operations rather than connecting to MySQL. The original had three cases: input, search and quit. My final code is different, but I will go over those changes in the enhancement section of this essay. 
+	This code was functional but, in my opinion, it was not fully complete. To completely utilize the database, this code needed to have full CRUD (Create, Read, Update, Delete) operations. As I stated before I only had three case options: input, search, and quit. This only had two of the four options in CRUD, and one was not fully complete. To enhance this program, I first added more functions. I now have 9 different functions to make this code operate and five case options. The addition was the delete files. I needed a way to delete the entries that were saved to the text file database. The second option I added was the edit function. The editFile() function allowed me to change the name, age and salary of information that has already been added to the database. The function will search for the information and once found it will confirm the selection and ask for the updates. The last enhancement I complete was to the search function. Now I already had the search function but all I could do was search for a user’s name. This really limited the ability of searching the database. It either returned one name or many users with that same name. What if I wanted to search for everyone making a certain salary or for everyone who was 20 years old? So, I changed the search function, adding in a switch statement with 6 case options. Now I could search by name, age, salary, or display all information on the database.
+	I selected this article because I feel it is a good representation of using a (text) database. This program demonstrates each CRUD operation. It has you input to create new entries, it has your search function to read what is already put into your database, it has your edit function for you update portion, and it allows you to delete information already put into the system. This program also demonstrates creating a text file for the information to be store on, then pulling that text file into other functions, searching the text file for information that might match and changing the information around. I feel that this program has met the course objectives and my enhancements have made this program better demonstrate the use of a database.
+	Through my time here at SNHU, a lot of my classes has delt with student databases either through MySQL or text files. I was comfortable reworking this program and I can remember struggling with it when I first attended SNHU. That is not to say this programming has come easy to me. In fact, it took a lot of research, and looking up C++ references to complete the enhancements. I am glad that I can overcome problems and challenges rather than being unable to complete a project. Programming is a puzzle with more than one way to solve the puzzle. Finding those solutions is half the fun of programming.
+
+   
+ # Artifact Enhancment Database
+   
+   
  
