@@ -19,6 +19,7 @@
  Hello! My name is Chad Shafer and this is my ePortfolio for Southern New Hampshire University class CS-499.
  This ePorfolio will demonstrate the knowledge and skills that I have developed throughout my journey to complete my B.A. in
  Software Engineering. To do so, I will showcase artifacts that demonstrate my skills and abilities in three key categories:
+ 
 - Software Design
 - Algorithms and Data Structure
 - Databases
@@ -27,6 +28,8 @@ To acomplish this demonstration I have taken prievious artifacts including open-
 categories above. Before I show the enhancements, I have created a code review that will discuss the functionality of the code as 
 well as discuss the planned enhancements. Following the enhancements will be a narrative describing in detail the changes
 and justifaction of the artifacts inclusion in this ePortfolio. 
+
+
 
 
 # Code Review
@@ -929,5 +932,7 @@ int main()
    
  # Artifact Enhancment Database
    
-   
+<details><summary>Database Code Enhancement</summary>
+
+		 
  
