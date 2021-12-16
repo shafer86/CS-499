@@ -15,7 +15,7 @@
 
 ![me](https://user-images.githubusercontent.com/79005760/145807383-11fbf96f-f710-4692-8d84-892d50f9ae58.jpg)
 
- ## Introduction and Self Assessment
+ # Introduction and Self Assessment
  
  Hello! My name is Chad Shafer and this is my ePortfolio for Southern New Hampshire University class CS-499.
  This ePorfolio will demonstrate the knowledge and skills that I have developed throughout my journey to complete my B.A. in
