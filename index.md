@@ -41,21 +41,21 @@ and justifaction of the artifacts inclusion in this ePortfolio.
   
 https://user-images.githubusercontent.com/79005760/145661407-538c1911-97cd-4b28-8bf7-506232c5774c.mp4
   
-  </p>
+  
   </details>
 
 <details><summary>Code Review Part Intro 2</summary>
   
 https://user-images.githubusercontent.com/79005760/145661662-46acb9cd-ca61-435d-b520-92f1b4991403.mp4
   
-  </p>
+  
   </details>
 
 <details><summary>Code Review Intro Part 3</summary>
   
 https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-94ce-0c8cd53ac4b1.mp4
     
-  </p>
+  
   </details>
 
 <details><summary>Code Review Part 1</summary>
@@ -64,28 +64,28 @@ https://user-images.githubusercontent.com/79005760/145673629-c19b5ae8-d0b2-422f-
   
   https://youtu.be/T95YuSByxrQ
   
-  </p>
+  
   </details>
  
  <details><summary>Code Review Part 2</summary>
   
   https://youtu.be/Od6pVbPDmZE
   
-  </p>
+  
   </details>
   
  <details><summary>Code Review Part 3</summary>
   
   https://youtu.be/vdP5zSQjusk
   
-  </p>
+  
   </details>
   
  <details><summary>Code Review Part 4</summary>
   
   https://youtu.be/Ri8VtZzhABg
   
-  </p>
+ 
   </details>
 
 
@@ -111,6 +111,7 @@ I can honestly say that when I was first putting this code together it was a str
 <details><summary>Code Before Enhancement</summary>
   
   ```ruby
+	
   #include <iostream>
 #include <vector>
 #include <fstream>
