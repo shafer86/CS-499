@@ -15,6 +15,8 @@
 
 ![me](https://user-images.githubusercontent.com/79005760/145807383-11fbf96f-f710-4692-8d84-892d50f9ae58.jpg)
 
+
+
  # Introduction and Self Assessment
  
  Hello! My name is Chad Shafer and this is my ePortfolio for Southern New Hampshire University class CS-499.
@@ -22,7 +24,11 @@
  Software Engineering. This journey has been a wholesome one. When I first started with SNHU as a computer science major, I was 
  quickly overwhelmed. It seemed to me that learning to code through you somewhere in the middle of the ocean and it was sink or 
  swim. I had to ask my brother, who already has his degree as a software engineer, who said that it will feel like you are
- working backwards but to stick with it. I took his advice and stuck it out. For a while it was a struggle but one day it clicked. Once that happened, I understood why we seem to start in the middle, work our way all over the place. I feel that I have learned a lot through this program, though I wish that we had focused more on one or two languages instead of jumping around. It was harder to get proficient in a certian language. I progressed, however, and now I am on the capstone to my second B.A. I enjoyed this capstone because you dont really think about how much you learned, or it does not occure to you until you need to consider it. That is what this class did for me. So in order for me to show what I have learned I will showcase artifacts that demonstrate my skills and abilities in three key categories:
+ working backwards but to stick with it. I took his advice and stuck it out. For a while it was a struggle but one day it clicked. Once that happened, I understood why we seem 
+ to start in the middle, work our way all over the place. I feel that I have learned a lot through this program, though I wish that we had focused more on one or two languages 
+ instead of jumping around. It was harder to get proficient in a certian language. I progressed, however, and now I am on the capstone to my second B.A. I enjoyed this 
+ capstone because you dont really think about how much you learned, or it does not occure to you until you need to consider it. That is what this class did for me. So in order 
+ for me to show what I have learned I will showcase artifacts that demonstrate my skills and abilities in three key categories:
  
 - Software Design
 - Algorithms and Data Structure
