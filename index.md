@@ -46,7 +46,7 @@ and justifaction of the artifacts inclusion in this ePortfolio.
 
 <details><summary>Code Review Intro Part 1</summary>
   
-https://user-images.githubusercontent.com/79005760/145661407-538c1911-97cd-4b28-8bf7-506232c5774c.mp4
+[here](https://user-images.githubusercontent.com/79005760/145661407-538c1911-97cd-4b28-8bf7-506232c5774c.mp4)
   
   
   </details>
