@@ -307,212 +307,42 @@ int main()
   &lt;/p&gt;
   &lt;/details&gt;</code></pre>
  
- # Artifact Enhancment Software Design
- 
- Here you will see the code before I made the changes described above. The code is all bunched up and hard to read. There are also
- no comments which make it hard for any programmer to work.
- 
-<details><summary>Code Before Enhancement</summary>
-  
-  ```ruby
-	
-  #include <iostream>
-#include <vector>
-#include <fstream>
-#include <string>
-#include <time.h>
-#include <cstdlib>
-
-using namespace std;
-void PrintMessage(string message, bool printTop = true, bool printBottom = true)
-{
-    if (printTop)
-    {
-        cout << "+---------------------------------+" << endl;
-        cout << "|";
-    }
-    else
-    {
-        cout << "|";
-    }
-    bool front = true;
-    for (int i = message.length(); i < 33; i++)
-    {
-        if (front)
-        {
-            message = " " + message;
-        }
-        else
-        {
-            message = message + " ";
-        }
-        front = !front;
-    }
-    cout << message.c_str();
-
-    if (printBottom)
-    {
-        cout << "|" << endl;
-        cout << "+---------------------------------+" << endl;
-    }
-    else
-    {
-        cout << "|" << endl;
-    }
-}
-void DrawHangman(int guessCount = 0)
-{
-    if (guessCount >= 1)
-        PrintMessage("|", false, false);
-    else
-        PrintMessage("", false, false);
-
-    if (guessCount >= 2)
-        PrintMessage("|", false, false);
-    else
-        PrintMessage("", false, false);
-
-    if (guessCount >= 3)
-        PrintMessage("O", false, false);
-    else
-        PrintMessage("", false, false);
-
-    if (guessCount == 4)
-        PrintMessage("/  ", false, false);
-
-    if (guessCount == 5)
-        PrintMessage("/| ", false, false);
-
-    if (guessCount >= 6)
-        PrintMessage("/|\\", false, false);
-    else
-        PrintMessage("", false, false);
-
-    if (guessCount >= 7)
-        PrintMessage("|", false, false);
-    else
-        PrintMessage("", false, false);
-
-    if (guessCount == 8)
-        PrintMessage("/", false, false);
-
-    if (guessCount >= 9)
-        PrintMessage("/ \\", false, false);
-    else
-        PrintMessage("", false, false);
-}
-void PrintLetters(string input, char from, char to)
-{
-    string s;
-    for (char i = from; i <= to; i++)
-    {
-        if (input.find(i) == string::npos)
-        {
-            s += i;
-            s += " ";
-        }
-        else
-            s += "  ";
-    }
-    PrintMessage(s, false, false);
-}
-void PrintAvailableLetters(string taken)
-{
-    PrintMessage("Available letters");
-    PrintLetters(taken, 'A', 'M');
-    PrintLetters(taken, 'N', 'Z');
-}
-bool PrintWordAndCheckWin(string word, string guessed)
-{
-    bool won = true;
-    string s;
-    for (int i = 0; i < word.length(); i++)
-    {
-        if (guessed.find(word[i]) == string::npos)
-        {
-            won = false;
-            s += "_ ";
-        }
-        else
-        {
-            s += word[i];
-            s += " ";
-        }
-    }
-    PrintMessage(s, false);
-    return won;
-}
-string LoadRandomWord(string path)
-{
-    int lineCount = 0;
-    string word;
-    vector<string> v;
-    ifstream reader(path.c_str());
-    if (reader.is_open())
-    {
-        while (std::getline(reader, word))
-            v.push_back(word);
-
-        int randomLine = rand() % v.size();
-
-        word = v.at(randomLine);
-        reader.close();
-    }
-    return word;
-}
-int TriesLeft(string word, string guessed)
-{
-    int error = 0;
-    for (int i = 0; i < guessed.length(); i++)
-    {
-        if (word.find(guessed[i]) == string::npos)
-            error++;
-    }
-    return error;
-}
-int main()
-{
-    srand(time(0));
-    string guesses;
-    string wordToGuess;
-    wordToGuess = LoadRandomWord("words.txt");
-    int tries = 0;
-    bool win = false;
-    do
-    {
-        system("cls"); //replace this line with system("clear"); if you run Linux or MacOS
-        PrintMessage("HANGMAN");
-        DrawHangman(tries);
-        PrintAvailableLetters(guesses);
-        PrintMessage("Guess the word");
-        win = PrintWordAndCheckWin(wordToGuess, guesses);
-
-        if (win)
-            break;
-
-        char x;
-        //cout << ">";
-        cin >> x;
-
-        if (guesses.find(x) == string::npos)
-            guesses += x;
-
-        tries = TriesLeft(wordToGuess, guesses);
-
-    } while (tries < 10);
-
-    if (win)
-        PrintMessage("YOU WON!");
-    else
-        PrintMessage("GAME OVER");
-
-    system("pause"); //this line wont work on Linux or MacOS so remove it
-    getchar();
-    return 0;
-}
-```
-  </p>
-  </details>
+ <p>&lt;details&gt;&lt;summary&gt;Hangman Code After Enhancment&lt;/summary&gt; <br /><br />```ruby<br /><br />#include &lt;iostream&gt;<br />#include &lt;vector&gt;<br />#include &lt;fstream&gt;<br />#include &lt;string&gt;<br />#include &lt;time.h&gt;<br />#include &lt;cstdlib&gt;<br />#include &lt;stddef.h&gt;<br />#include &lt;cstddef&gt;</p>
+<p><br />using namespace std;</p>
+<p>//function to print messages to the screen<br />//the top and bottom borders are optional<br />void PrintMessage(string message, bool printTop = true, bool printBottom = true)<br />{<br />//if print top parameter is true, print the top border<br />if (printTop)<br />{<br />cout &lt;&lt; "+---------------------------------+" &lt;&lt; endl;<br />cout &lt;&lt; "|";<br />}<br />else<br />{<br />cout &lt;&lt; "|";<br />}</p>
+<p>//print message center aligned<br />bool front = true;<br />for (int i = message.length(); i &lt; 33; i++)<br />{<br />if (front)<br />{<br />message = " " + message;<br />}<br />else<br />{<br />message = message + " ";<br />}<br />front = !front;<br />}<br />cout &lt;&lt; message.c_str();</p>
+<p>//if print bottom parameter is true, print the bottom border<br />if (printBottom)<br />{<br />cout &lt;&lt; "|" &lt;&lt; endl;<br />cout &lt;&lt; "+---------------------------------+" &lt;&lt; endl;<br />}<br />else<br />{<br />cout &lt;&lt; "|" &lt;&lt; endl;<br />}<br />}</p>
+<p>//function to draw the hanged man based on number of<br />//incorrect guesses the player has made<br />void DrawHangman(int guessCount = 0)<br />{<br />if (guessCount &gt;= 1)<br />PrintMessage("|", false, false);<br />else<br />PrintMessage("", false, false);</p>
+<p>if (guessCount &gt;= 2)<br />PrintMessage("|", false, false);<br />else<br />PrintMessage("", false, false);</p>
+<p>if (guessCount &gt;= 3)<br />PrintMessage("O", false, false);<br />else<br />PrintMessage("", false, false);</p>
+<p>if (guessCount == 4)<br />PrintMessage("/ ", false, false);</p>
+<p>if (guessCount == 5)<br />PrintMessage("/| ", false, false);</p>
+<p>if (guessCount &gt;= 6)<br />PrintMessage("/|\\", false, false);<br />else<br />PrintMessage("", false, false);</p>
+<p>if (guessCount &gt;= 7)<br />PrintMessage("|", false, false);<br />else<br />PrintMessage("", false, false);</p>
+<p>if (guessCount == 8)<br />PrintMessage("/", false, false);</p>
+<p>if (guessCount &gt;= 9)<br />PrintMessage("/ \\", false, false);<br />else<br />PrintMessage("", false, false);<br />}</p>
+<p>//function to print a list of letters ranging from<br />//one character to another, leaving off characters<br />//that player has already guessed<br />void PrintLetters(string input, char from, char to)<br />{<br />string s;<br />for (char i = from; i &lt;= to; i++)<br />{<br />if (input.find(i) == string::npos)<br />{<br />s += i;<br />s += " ";<br />}<br />else<br />s += " ";<br />}<br />PrintMessage(s, false, false);<br />}</p>
+<p>//print available letters for player to guess<br />//letters are listed in two separate rows<br />void PrintAvailableLetters(string taken)<br />{<br />PrintMessage("Available letters");<br />PrintLetters(taken, 'A', 'M');<br />PrintLetters(taken, 'N', 'Z');<br />}</p>
+<p>//print the word the player must guess, showing the<br />//letter if the player has guessed it, and showing an<br />//underscore if the letter remains unguessed<br />bool PrintWordAndCheckWin(string word, string guessed)<br />{<br />//return a bool that determines whether the player<br />//has won or not<br />bool won = true;<br />string s;<br />for (int i = 0; i &lt; word.length(); i++)<br />{<br />//if there are any letters in the word that are<br />//not in the list of guessed letters, then the<br />//player has not won, and we will show an underscore<br />if (guessed.find(word[i]) == string::npos)<br />{<br />won = false;<br />s += "_ ";<br />}<br />else<br />{<br />s += word[i];<br />s += " ";<br />}<br />}<br />PrintMessage(s, false);<br />return won;<br />}</p>
+<p>//load a file containing a list of words and pick a<br />//random word to use for the player to guess<br />string LoadRandomWord(string path)<br />{<br />int lineCount = 0;<br />string word;<br />vector&lt;string&gt; v;<br />ifstream reader(path.c_str());<br />if (reader.is_open())<br />{<br />while (std::getline(reader, word))<br />v.push_back(word);</p>
+<p>int randomLine = rand() % v.size();</p>
+<p>word = v.at(randomLine);<br />reader.close();<br />}<br />return word;<br />}</p>
+<p>//function to determine how many incorrect guesses<br />//the player has made<br />int TriesLeft(string word, string guessed)<br />{<br />int error = 0;</p>
+<p>//letters in the string of guessed characters<br />//that do not appear in the word indicates how<br />//many errors the player has made<br />for (int i = 0; i &lt; guessed.length(); i++)<br />{<br />if (word.find(guessed[i]) == string::npos)<br />error++;<br />}<br />return error;<br />}</p>
+<p>//main function<br />int main()<br />{<br />//seeding randomizer with time this app has been alive<br />//Enhanced the srand by adding time(NULL). By adding NULL, the seeder pulls<br />// the time from the internal clock of the computer. <br />srand(time(NULL));<br />string guesses;<br />string wordToGuess;</p>
+<p>//load a random word from a file called words.txt<br />wordToGuess = LoadRandomWord("words.txt");</p>
+<p>int tries = 0;<br />bool win = false;</p>
+<p>//main game loop will loop at least once, and will continue to loop<br />//until the player wins, or until the player has made ten errors<br />//in guessing letters<br />do<br />{<br />//clear the screen... we will redraw everything every time we loop<br />system("cls"); //replace this line with system("clear"); if you run Linux or MacOS</p>
+<p>//print the name of the game<br />PrintMessage("HANGMAN");<br />DrawHangman(tries);</p>
+<p>//print the available letters<br />PrintAvailableLetters(guesses);</p>
+<p>PrintMessage("Guess the word");</p>
+<p>//print the word and check if player won<br />//if player won, exit the game loop<br />win = PrintWordAndCheckWin(wordToGuess, guesses);<br />if (win)<br />break;</p>
+<p>//prompt the player for a letter<br />char x;<br />//cout &lt;&lt; "&gt;";<br />cin &gt;&gt; x;</p>
+<p>//if player has not guessed the letter yet,<br />//then add it to the string containing all of<br />//the players guesses<br />if (guesses.find(x) == string::npos)<br />guesses += x;</p>
+<p>//get the number of errors the player has made<br />tries = TriesLeft(wordToGuess, guesses);</p>
+<p>} while (tries &lt; 10);</p>
+<p>//if the win flag was set to true then the player won<br />//otherwise the player exited the game loop by making<br />//too many mistakes and lost the game<br />if (win)<br />PrintMessage("YOU WON!");<br />else<br />PrintMessage("GAME OVER");</p>
+<p>//pause the console so the player can see the end game message<br />//until entering a character in the console<br />system("pause"); //this line wont work on Linux or MacOS so remove it<br />getchar();<br />return 0;<br />}<br />/*<br />+---------------------------------+<br />| HANG MAN |<br />+---------------------------------+<br />| | |<br />| | |<br />| O |<br />| /|\ |<br />| | |<br />| / \ |<br />| +----------+ |<br />| | | |<br />+---------------------------------+<br />| Available letters |<br />+---------------------------------+<br />| A B C D E F G H I J K L M |<br />| N O P Q R S T U V W X Y Z |<br />+---------------------------------+<br />| Guess the word |<br />+---------------------------------+<br />| _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |<br />+---------------------------------+<br />&gt;<br />*/<br />```<br />&lt;/p&gt;<br />&lt;/details&gt;</p>
   
 <details><summary>Hangman Code After Enhancment</summary> 
   
