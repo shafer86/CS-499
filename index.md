@@ -308,6 +308,7 @@ int main()
   &lt;/details&gt;</code></pre>
  
  
+ 
 <details><summary>Hangman Code After Enhancment</summary> 
   
   ```ruby
