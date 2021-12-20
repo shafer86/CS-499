@@ -103,7 +103,7 @@ I used this artifact because I feel that this program, along with the enhancemen
 
 I can honestly say that when I was first putting this code together it was a struggle with a lot of research and help from my brother who is a software engineer in Michigan. In the beginning it felt like running on a treadmill. You are running fast but going nowhere. That’s what this journey through this major has felt like. However, when I look back at this code for this course, I was able to see where enhancements were needed and what I could do to make the program better. To me that shows that there is growth and when I felt like I was going nowhere, I was moving more than I thought. There is still a lot I do not understand when it comes to programming but there is always information to learn from. The commenting and clean coding were the easy part to the enhancement, but it does enhance the code greatly. The harder part will come with the algorithms and data structure and working on the seeding randomizer.
 
-
+Test
 
 
  
