@@ -104,114 +104,114 @@ I used this artifact because I feel that this program, along with the enhancemen
 I can honestly say that when I was first putting this code together it was a struggle with a lot of research and help from my brother who is a software engineer in Michigan. In the beginning it felt like running on a treadmill. You are running fast but going nowhere. That’s what this journey through this major has felt like. However, when I look back at this code for this course, I was able to see where enhancements were needed and what I could do to make the program better. To me that shows that there is growth and when I felt like I was going nowhere, I was moving more than I thought. There is still a lot I do not understand when it comes to programming but there is always information to learn from. The commenting and clean coding were the easy part to the enhancement, but it does enhance the code greatly. The harder part will come with the algorithms and data structure and working on the seeding randomizer.
 
   
-<h1>Artifact Enhancment Software Design</h1>
-<p>Here you will see the code before I made the changes described above. The code is all bunched up and hard to read. There are also
-no comments which make it hard for any programmer to work.</p>
-<details><summary>Code Before Enhancement</summary>
-<pre><code class="language-ruby">  
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;fstream&gt;
-#include &lt;string&gt;
-#include &lt;time.h&gt;
-#include &lt;cstdlib&gt;
+<pre id="htmlpre"><code id="html">&lt;h1&gt;Artifact Enhancment Software Design&lt;/h1&gt;
+&lt;p&gt;Here you will see the code before I made the changes described above. The code is all bunched up and hard to read. There are also
+no comments which make it hard for any programmer to work.&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;Code Before Enhancement&lt;/summary&gt;
+&lt;pre&gt;&lt;code class="language-ruby"&gt;  
+#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;fstream&amp;gt;
+#include &amp;lt;string&amp;gt;
+#include &amp;lt;time.h&amp;gt;
+#include &amp;lt;cstdlib&amp;gt;
 
 using namespace std;
 void PrintMessage(string message, bool printTop = true, bool printBottom = true)
 {
   if (printTop)
   {
-      cout &lt;&lt; &quot;+---------------------------------+&quot; &lt;&lt; endl;
-      cout &lt;&lt; &quot;|&quot;;
+      cout &amp;lt;&amp;lt; &amp;quot;+---------------------------------+&amp;quot; &amp;lt;&amp;lt; endl;
+      cout &amp;lt;&amp;lt; &amp;quot;|&amp;quot;;
   }
   else
   {
-      cout &lt;&lt; &quot;|&quot;;
+      cout &amp;lt;&amp;lt; &amp;quot;|&amp;quot;;
   }
   bool front = true;
-  for (int i = message.length(); i &lt; 33; i++)
+  for (int i = message.length(); i &amp;lt; 33; i++)
   {
       if (front)
       {
-          message = &quot; &quot; + message;
+          message = &amp;quot; &amp;quot; + message;
       }
       else
       {
-          message = message + &quot; &quot;;
+          message = message + &amp;quot; &amp;quot;;
       }
       front = !front;
   }
-  cout &lt;&lt; message.c_str();
+  cout &amp;lt;&amp;lt; message.c_str();
 
   if (printBottom)
   {
-      cout &lt;&lt; &quot;|&quot; &lt;&lt; endl;
-      cout &lt;&lt; &quot;+---------------------------------+&quot; &lt;&lt; endl;
+      cout &amp;lt;&amp;lt; &amp;quot;|&amp;quot; &amp;lt;&amp;lt; endl;
+      cout &amp;lt;&amp;lt; &amp;quot;+---------------------------------+&amp;quot; &amp;lt;&amp;lt; endl;
   }
   else
   {
-      cout &lt;&lt; &quot;|&quot; &lt;&lt; endl;
+      cout &amp;lt;&amp;lt; &amp;quot;|&amp;quot; &amp;lt;&amp;lt; endl;
   }
 }
 void DrawHangman(int guessCount = 0)
 {
-  if (guessCount &gt;= 1)
-      PrintMessage(&quot;|&quot;, false, false);
+  if (guessCount &amp;gt;= 1)
+      PrintMessage(&amp;quot;|&amp;quot;, false, false);
   else
-      PrintMessage(&quot;&quot;, false, false);
+      PrintMessage(&amp;quot;&amp;quot;, false, false);
 
-  if (guessCount &gt;= 2)
-      PrintMessage(&quot;|&quot;, false, false);
+  if (guessCount &amp;gt;= 2)
+      PrintMessage(&amp;quot;|&amp;quot;, false, false);
   else
-      PrintMessage(&quot;&quot;, false, false);
+      PrintMessage(&amp;quot;&amp;quot;, false, false);
 
-  if (guessCount &gt;= 3)
-      PrintMessage(&quot;O&quot;, false, false);
+  if (guessCount &amp;gt;= 3)
+      PrintMessage(&amp;quot;O&amp;quot;, false, false);
   else
-      PrintMessage(&quot;&quot;, false, false);
+      PrintMessage(&amp;quot;&amp;quot;, false, false);
 
   if (guessCount == 4)
-      PrintMessage(&quot;/  &quot;, false, false);
+      PrintMessage(&amp;quot;/  &amp;quot;, false, false);
 
   if (guessCount == 5)
-      PrintMessage(&quot;/| &quot;, false, false);
+      PrintMessage(&amp;quot;/| &amp;quot;, false, false);
 
-  if (guessCount &gt;= 6)
-      PrintMessage(&quot;/|\\&quot;, false, false);
+  if (guessCount &amp;gt;= 6)
+      PrintMessage(&amp;quot;/|\\&amp;quot;, false, false);
   else
-      PrintMessage(&quot;&quot;, false, false);
+      PrintMessage(&amp;quot;&amp;quot;, false, false);
 
-  if (guessCount &gt;= 7)
-      PrintMessage(&quot;|&quot;, false, false);
+  if (guessCount &amp;gt;= 7)
+      PrintMessage(&amp;quot;|&amp;quot;, false, false);
   else
-      PrintMessage(&quot;&quot;, false, false);
+      PrintMessage(&amp;quot;&amp;quot;, false, false);
 
   if (guessCount == 8)
-      PrintMessage(&quot;/&quot;, false, false);
+      PrintMessage(&amp;quot;/&amp;quot;, false, false);
 
-  if (guessCount &gt;= 9)
-      PrintMessage(&quot;/ \\&quot;, false, false);
+  if (guessCount &amp;gt;= 9)
+      PrintMessage(&amp;quot;/ \\&amp;quot;, false, false);
   else
-      PrintMessage(&quot;&quot;, false, false);
+      PrintMessage(&amp;quot;&amp;quot;, false, false);
 }
 void PrintLetters(string input, char from, char to)
 {
   string s;
-  for (char i = from; i &lt;= to; i++)
+  for (char i = from; i &amp;lt;= to; i++)
   {
       if (input.find(i) == string::npos)
       {
           s += i;
-          s += &quot; &quot;;
+          s += &amp;quot; &amp;quot;;
       }
       else
-          s += &quot;  &quot;;
+          s += &amp;quot;  &amp;quot;;
   }
   PrintMessage(s, false, false);
 }
 void PrintAvailableLetters(string taken)
 {
-  PrintMessage(&quot;Available letters&quot;);
+  PrintMessage(&amp;quot;Available letters&amp;quot;);
   PrintLetters(taken, 'A', 'M');
   PrintLetters(taken, 'N', 'Z');
 }
@@ -219,17 +219,17 @@ bool PrintWordAndCheckWin(string word, string guessed)
 {
   bool won = true;
   string s;
-  for (int i = 0; i &lt; word.length(); i++)
+  for (int i = 0; i &amp;lt; word.length(); i++)
   {
       if (guessed.find(word[i]) == string::npos)
       {
           won = false;
-          s += &quot;_ &quot;;
+          s += &amp;quot;_ &amp;quot;;
       }
       else
       {
           s += word[i];
-          s += &quot; &quot;;
+          s += &amp;quot; &amp;quot;;
       }
   }
   PrintMessage(s, false);
@@ -239,7 +239,7 @@ string LoadRandomWord(string path)
 {
   int lineCount = 0;
   string word;
-  vector&lt;string&gt; v;
+  vector&amp;lt;string&amp;gt; v;
   ifstream reader(path.c_str());
   if (reader.is_open())
   {
@@ -256,7 +256,7 @@ string LoadRandomWord(string path)
 int TriesLeft(string word, string guessed)
 {
   int error = 0;
-  for (int i = 0; i &lt; guessed.length(); i++)
+  for (int i = 0; i &amp;lt; guessed.length(); i++)
   {
       if (word.find(guessed[i]) == string::npos)
           error++;
@@ -268,45 +268,44 @@ int main()
   srand(time(0));
   string guesses;
   string wordToGuess;
-  wordToGuess = LoadRandomWord(&quot;words.txt&quot;);
+  wordToGuess = LoadRandomWord(&amp;quot;words.txt&amp;quot;);
   int tries = 0;
   bool win = false;
   do
   {
-      system(&quot;cls&quot;); //replace this line with system(&quot;clear&quot;); if you run Linux or MacOS
-      PrintMessage(&quot;HANGMAN&quot;);
+      system(&amp;quot;cls&amp;quot;); //replace this line with system(&amp;quot;clear&amp;quot;); if you run Linux or MacOS
+      PrintMessage(&amp;quot;HANGMAN&amp;quot;);
       DrawHangman(tries);
       PrintAvailableLetters(guesses);
-      PrintMessage(&quot;Guess the word&quot;);
+      PrintMessage(&amp;quot;Guess the word&amp;quot;);
       win = PrintWordAndCheckWin(wordToGuess, guesses);
 
       if (win)
           break;
 
       char x;
-      //cout &lt;&lt; &quot;&gt;&quot;;
-      cin &gt;&gt; x;
+      //cout &amp;lt;&amp;lt; &amp;quot;&amp;gt;&amp;quot;;
+      cin &amp;gt;&amp;gt; x;
 
       if (guesses.find(x) == string::npos)
           guesses += x;
 
       tries = TriesLeft(wordToGuess, guesses);
 
-  } while (tries &lt; 10);
+  } while (tries &amp;lt; 10);
 
   if (win)
-      PrintMessage(&quot;YOU WON!&quot;);
+      PrintMessage(&amp;quot;YOU WON!&amp;quot;);
   else
-      PrintMessage(&quot;GAME OVER&quot;);
+      PrintMessage(&amp;quot;GAME OVER&amp;quot;);
 
-  system(&quot;pause&quot;); //this line wont work on Linux or MacOS so remove it
+  system(&amp;quot;pause&amp;quot;); //this line wont work on Linux or MacOS so remove it
   getchar();
   return 0;
 }
-</code></pre>
-  </p>
-  </details>
- 
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/p&gt;
+  &lt;/details&gt;</code></pre>
  
  # Artifact Enhancment Software Design
  
