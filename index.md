@@ -38,29 +38,6 @@ categories above. Before I show the enhancements, I have created a code review t
 well as discuss the planned enhancements. Following the enhancements will be a narrative describing in detail the changes
 and justifaction of the artifacts inclusion in this ePortfolio.</p>
 
-# Introduction and Self Assessment
- 
-Hello! My name is Chad Shafer and this is my ePortfolio for Southern New Hampshire University class CS-499.
-This ePorfolio will demonstrate the knowledge and skills that I have developed throughout my journey to complete my B.A. in
-Software Engineering. This journey has been a wholesome one. When I first started with SNHU as a computer science major, I was 
-quickly overwhelmed. It seemed to me that learning to code through you somewhere in the middle of the ocean and it was sink or 
-swim. I had to ask my brother, who already has his degree as a software engineer, who said that it will feel like you are
-working backwards but to stick with it. I took his advice and stuck it out. For a while it was a struggle but one day it clicked. Once that happened, I understood why we seem 
-to start in the middle, work our way all over the place. I feel that I have learned a lot through this program, though I wish that we had focused more on one or two languages 
-instead of jumping around. It was harder to get proficient in a certian language. I progressed, however, and now I am on the capstone to my second B.A. I enjoyed this 
-capstone because you dont really think about how much you learned, or it does not occure to you until you need to consider it. That is what this class did for me. So in order 
-for me to show what I have learned I will showcase artifacts that demonstrate my skills and abilities in three key categories:
- 
-- Software Design
-- Algorithms and Data Structure
-- Databases
-
-To acomplish this demonstration I have taken prievious artifacts including open-source code and enhanced it according to the three 
-categories above. Before I show the enhancements, I have created a code review that will discuss the functionality of the code as 
-well as discuss the planned enhancements. Following the enhancements will be a narrative describing in detail the changes
-and justifaction of the artifacts inclusion in this ePortfolio. 
-
-
 
 
 # Code Review
@@ -127,7 +104,208 @@ I used this artifact because I feel that this program, along with the enhancemen
 I can honestly say that when I was first putting this code together it was a struggle with a lot of research and help from my brother who is a software engineer in Michigan. In the beginning it felt like running on a treadmill. You are running fast but going nowhere. That’s what this journey through this major has felt like. However, when I look back at this code for this course, I was able to see where enhancements were needed and what I could do to make the program better. To me that shows that there is growth and when I felt like I was going nowhere, I was moving more than I thought. There is still a lot I do not understand when it comes to programming but there is always information to learn from. The commenting and clean coding were the easy part to the enhancement, but it does enhance the code greatly. The harder part will come with the algorithms and data structure and working on the seeding randomizer.
 
   
+<h1>Artifact Enhancment Software Design</h1>
+<p>Here you will see the code before I made the changes described above. The code is all bunched up and hard to read. There are also
+no comments which make it hard for any programmer to work.</p>
+<details><summary>Code Before Enhancement</summary>
+<pre><code class="language-ruby">  
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+#include &lt;time.h&gt;
+#include &lt;cstdlib&gt;
 
+using namespace std;
+void PrintMessage(string message, bool printTop = true, bool printBottom = true)
+{
+  if (printTop)
+  {
+      cout &lt;&lt; &quot;+---------------------------------+&quot; &lt;&lt; endl;
+      cout &lt;&lt; &quot;|&quot;;
+  }
+  else
+  {
+      cout &lt;&lt; &quot;|&quot;;
+  }
+  bool front = true;
+  for (int i = message.length(); i &lt; 33; i++)
+  {
+      if (front)
+      {
+          message = &quot; &quot; + message;
+      }
+      else
+      {
+          message = message + &quot; &quot;;
+      }
+      front = !front;
+  }
+  cout &lt;&lt; message.c_str();
+
+  if (printBottom)
+  {
+      cout &lt;&lt; &quot;|&quot; &lt;&lt; endl;
+      cout &lt;&lt; &quot;+---------------------------------+&quot; &lt;&lt; endl;
+  }
+  else
+  {
+      cout &lt;&lt; &quot;|&quot; &lt;&lt; endl;
+  }
+}
+void DrawHangman(int guessCount = 0)
+{
+  if (guessCount &gt;= 1)
+      PrintMessage(&quot;|&quot;, false, false);
+  else
+      PrintMessage(&quot;&quot;, false, false);
+
+  if (guessCount &gt;= 2)
+      PrintMessage(&quot;|&quot;, false, false);
+  else
+      PrintMessage(&quot;&quot;, false, false);
+
+  if (guessCount &gt;= 3)
+      PrintMessage(&quot;O&quot;, false, false);
+  else
+      PrintMessage(&quot;&quot;, false, false);
+
+  if (guessCount == 4)
+      PrintMessage(&quot;/  &quot;, false, false);
+
+  if (guessCount == 5)
+      PrintMessage(&quot;/| &quot;, false, false);
+
+  if (guessCount &gt;= 6)
+      PrintMessage(&quot;/|\\&quot;, false, false);
+  else
+      PrintMessage(&quot;&quot;, false, false);
+
+  if (guessCount &gt;= 7)
+      PrintMessage(&quot;|&quot;, false, false);
+  else
+      PrintMessage(&quot;&quot;, false, false);
+
+  if (guessCount == 8)
+      PrintMessage(&quot;/&quot;, false, false);
+
+  if (guessCount &gt;= 9)
+      PrintMessage(&quot;/ \\&quot;, false, false);
+  else
+      PrintMessage(&quot;&quot;, false, false);
+}
+void PrintLetters(string input, char from, char to)
+{
+  string s;
+  for (char i = from; i &lt;= to; i++)
+  {
+      if (input.find(i) == string::npos)
+      {
+          s += i;
+          s += &quot; &quot;;
+      }
+      else
+          s += &quot;  &quot;;
+  }
+  PrintMessage(s, false, false);
+}
+void PrintAvailableLetters(string taken)
+{
+  PrintMessage(&quot;Available letters&quot;);
+  PrintLetters(taken, 'A', 'M');
+  PrintLetters(taken, 'N', 'Z');
+}
+bool PrintWordAndCheckWin(string word, string guessed)
+{
+  bool won = true;
+  string s;
+  for (int i = 0; i &lt; word.length(); i++)
+  {
+      if (guessed.find(word[i]) == string::npos)
+      {
+          won = false;
+          s += &quot;_ &quot;;
+      }
+      else
+      {
+          s += word[i];
+          s += &quot; &quot;;
+      }
+  }
+  PrintMessage(s, false);
+  return won;
+}
+string LoadRandomWord(string path)
+{
+  int lineCount = 0;
+  string word;
+  vector&lt;string&gt; v;
+  ifstream reader(path.c_str());
+  if (reader.is_open())
+  {
+      while (std::getline(reader, word))
+          v.push_back(word);
+
+      int randomLine = rand() % v.size();
+
+      word = v.at(randomLine);
+      reader.close();
+  }
+  return word;
+}
+int TriesLeft(string word, string guessed)
+{
+  int error = 0;
+  for (int i = 0; i &lt; guessed.length(); i++)
+  {
+      if (word.find(guessed[i]) == string::npos)
+          error++;
+  }
+  return error;
+}
+int main()
+{
+  srand(time(0));
+  string guesses;
+  string wordToGuess;
+  wordToGuess = LoadRandomWord(&quot;words.txt&quot;);
+  int tries = 0;
+  bool win = false;
+  do
+  {
+      system(&quot;cls&quot;); //replace this line with system(&quot;clear&quot;); if you run Linux or MacOS
+      PrintMessage(&quot;HANGMAN&quot;);
+      DrawHangman(tries);
+      PrintAvailableLetters(guesses);
+      PrintMessage(&quot;Guess the word&quot;);
+      win = PrintWordAndCheckWin(wordToGuess, guesses);
+
+      if (win)
+          break;
+
+      char x;
+      //cout &lt;&lt; &quot;&gt;&quot;;
+      cin &gt;&gt; x;
+
+      if (guesses.find(x) == string::npos)
+          guesses += x;
+
+      tries = TriesLeft(wordToGuess, guesses);
+
+  } while (tries &lt; 10);
+
+  if (win)
+      PrintMessage(&quot;YOU WON!&quot;);
+  else
+      PrintMessage(&quot;GAME OVER&quot;);
+
+  system(&quot;pause&quot;); //this line wont work on Linux or MacOS so remove it
+  getchar();
+  return 0;
+}
+</code></pre>
+  </p>
+  </details>
  
  
  # Artifact Enhancment Software Design
